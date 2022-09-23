@@ -1,5 +1,5 @@
-@import "/css/header.css";
-@import "/css/singlepage.css";
+@import "./header.css";
+@import "./singlepage.css";
 
 * {
   margin: 0;
