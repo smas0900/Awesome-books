@@ -26,7 +26,8 @@ export default class Books {
   DisplayData() {
     this.DisplayBooks.innerHTML = '';
     const HoldData = JSON.parse(localStorage.getItem('Todo'));
-    if (HoldData !== null) {
+    console.log(HoldData)
+    if (HoldData.length > 0 ) {
       this.StoreBooks = HoldData;
       HoldData.forEach((element, index) => {
         this.DisplayBooks.innerHTML += `
@@ -39,9 +40,15 @@ export default class Books {
           elem.addEventListener('click', (e) => {
             elem.parentNode.parentNode.remove();
             Books.removeData(e.target.id);
+            Book.DisplayData();
           });
         });
       });
+    } else {
+      this.DisplayBooks.innerHTML += `
+      <tr class="Display">
+      <td colspan="2">Nothing to show</td>
+      </tr>`;
     }
   }
 
@@ -54,4 +61,5 @@ export default class Books {
 
 const Book = new Books();
 Book.SaveItem();
-Book.DisplayData(() => {});
+Book.DisplayData();
+localStorage.removeItem('bookarr');
