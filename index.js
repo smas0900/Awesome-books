@@ -42,8 +42,6 @@ export default class Books {
           });
         });
       });
-    } else {
-      []
     }
   }
 
