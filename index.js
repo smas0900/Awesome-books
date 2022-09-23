@@ -1,5 +1,5 @@
 export default class Books {
-  constructor(){
+    constructor() {
       this.BookList = {};
       this.StoreBooks = [];
       this.DisplayBooks = document.querySelector('.collection');
@@ -9,43 +9,51 @@ export default class Books {
       this.AddBook = document.querySelector('#btn');
       this.ErrorChecker = document.querySelector('.checker');
       this.DisplayColor = document.querySelector('.Display');
+    }
+  
+    SaveItem() {
+      this.AddBook.addEventListener('click', () => {
+        this.BookList = {
+          book: this.NewTitle.value,
+          author: this.NewAuthor.value,
+        };
+        this.StoreBooks.push(this.BookList);
+        localStorage.setItem('Todo', JSON.stringify(this.StoreBooks));
+        this.DisplayData();
+      });
+    }
+  
+    DisplayData() {
+      this.DisplayBooks.innerHTML = '';
+      const HoldData = JSON.parse(localStorage.getItem('Todo'));
+      if (HoldData !== null) {
+        this.StoreBooks = HoldData;
+        HoldData.forEach((element, index) => {
+          this.DisplayBooks.innerHTML += `
+            <tr class="Display">
+              <td><span>"</span>${element.book}<span>" by </span>${element.author}</td>
+              <td><button class="remove" id="${index}">Remove</button></td>
+            </tr>`;
+          const removeBtn = document.querySelectorAll('.remove');
+          removeBtn.forEach((elem) => {
+            elem.addEventListener('click', (e) => {
+              elem.parentNode.parentNode.remove();
+              Books.removeData(e.target.id);
+            });
+          });
+        });
+      } else {
+        [];
+      }
+    }
+  
+    static removeData(index) {
+      const books = JSON.parse(localStorage.getItem('Todo'));
+      books.splice(index, 1);
+      localStorage.setItem('Todo', JSON.stringify(books));
+    }
   }
   
-  SaveItem(){
-  this.AddBook.addEventListener('click',()=>{
-      this.BookList={
-          book:this.NewTitle.value,
-          author:this.NewAuthor.value
-         } 
-         this.StoreBooks.push(this.BookList);
-         localStorage.setItem('Todo',JSON.stringify(this.StoreBooks))
-         this.DisplayData();
-  })
-  
-  }
-  
-  
-  DisplayData(){
-  this.DisplayBooks.innerHTML=''
-  const HoldData=JSON.parse(localStorage.getItem('Todo'))
-  if(HoldData !==null){
-      this.StoreBooks=HoldData;
-      HoldData.forEach((element,index)=>{
-          this.DisplayBooks.innerHTML+=`
-          <tr class="Display">
-          <td><span>"</span>${element.book}<span>" by </span>${element.author}</td>
-          <td><button class="remove" id="${index}">Remove</button></td>
-          </tr>`;
-      })
-  
-  }else{
-      []
-  }
-  }
-  
-  }
-  
-  const Book=new Books();
+  const Book = new Books();
   Book.SaveItem();
-  Book.DisplayData();
-  
+  Book.DisplayData(() => {});
