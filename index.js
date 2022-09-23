@@ -63,4 +63,3 @@ const Book = new Books();
 Book.SaveItem();
 Book.DisplayData();
 localStorage.removeItem('bookarr');
-
