@@ -1,4 +1,4 @@
-export default class Books {
+class Books {
   constructor() {
     this.BookList = {};
     this.StoreBooks = [];
@@ -26,8 +26,7 @@ export default class Books {
   DisplayData() {
     this.DisplayBooks.innerHTML = '';
     const HoldData = JSON.parse(localStorage.getItem('Todo'));
-    console.log(HoldData)
-    if (HoldData.length > 0 ) {
+    if (HoldData.length > 0) {
       this.StoreBooks = HoldData;
       HoldData.forEach((element, index) => {
         this.DisplayBooks.innerHTML += `
@@ -40,7 +39,8 @@ export default class Books {
           elem.addEventListener('click', (e) => {
             elem.parentNode.parentNode.remove();
             Books.removeData(e.target.id);
-            Book.DisplayData();
+
+            this.DisplayData();
           });
         });
       });
