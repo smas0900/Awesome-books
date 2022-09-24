@@ -23,9 +23,7 @@ navLinks.forEach((element) => {
   element.addEventListener('click', () => {
     switch (target) {
       case 'list':
-        {
-          defaultData();
-        }
+        defaultData();
         break;
       case 'form':
         {
