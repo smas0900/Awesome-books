@@ -15,4 +15,18 @@ export default class Form {
   get content() {
     return this._content;
   }
+  activeFormSubmit() {
+    const form = document.querySelector('.form');
+    const author = document.querySelector('.author');
+    const title = document.querySelector('.title');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const authorName = author.value;
+      const bookTitle = title.value;
+      const data = new Book(bookTitle, authorName);
+      data.addBook();
+      author.value = '';
+      title.value = '';
+    });
+  }
 }
