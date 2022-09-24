@@ -1,6 +1,6 @@
 export default class Contact {
-    constructor() {
-      this._content = `
+  constructor() {
+    this._content = `
           <section class="main-container">
               <h1 class="title">contact Information</h1>
               <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, dignissimos! Deleniti iste quas error numquam eaque illum illo officiis cumque et impedit saepe, cupiditate est incidunt similique consequuntur velit quae.</p>
@@ -11,10 +11,9 @@ export default class Contact {
                   </ul>
               </section>
               `;
-    }
-  
-    get content() {
-      return this._content;
-    }
   }
-  
+
+  get content() {
+    return this._content;
+  }
+}
