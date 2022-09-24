@@ -1,15 +1,15 @@
 export default class List {
   constructor() {
     this._content = `
-        <section>
+        <section class="main-container">
             <h1 class="h1 invisible">Awesome Books</h1>
             <div class="books"></div>
             <table>
                 <thead>
                   <tr>
-                    <th>Book</th>
-                    <th>Author</th>
-                    <th>remove</th>
+                    <th>Book Title</th>
+                    <th>Author Name</th>
+                    <th>Operation</th>
                   </tr>
                 </thead>
                 <tbody class="library">
