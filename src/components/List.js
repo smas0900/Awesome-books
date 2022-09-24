@@ -23,13 +23,14 @@ export default class List {
     return this._content;
   }
 
-  displayBooks() {
+  static displayBooks() {
     let library = document.querySelector('.library');
     let dataStored = [];
     let books = [];
     if (localStorage.getItem('books')) {
       dataStored = localStorage.getItem('books');
       books = JSON.parse(dataStored);
+      library.innerHTML = '';
       books.forEach((element, index) => {
         library.innerHTML += `
         <tr>
@@ -57,6 +58,8 @@ export default class List {
         const books = JSON.parse(localStorage.getItem('books'));
         books.splice(index, 1);
         localStorage.setItem('books', JSON.stringify(books));
+        List.displayBooks();
+        this.deleteBook();
       });
     });
   }
