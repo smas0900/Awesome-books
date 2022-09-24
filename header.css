@@ -13,7 +13,8 @@
   align-items: center;
   list-style: none;
   margin-right: 1%;
-  width: 300px;
+  width: 200px;
+  justify-content: space-around;
 }
 
 .nav-items {
@@ -42,9 +43,8 @@
   margin-top: 20px;
 }
 
-.nav-items a {
+.list-Container a {
   text-decoration: none;
-  padding: 10px;
 }
 
 .bar-head {

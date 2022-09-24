@@ -105,7 +105,8 @@ input {
 
 td {
   color: black;
-  font-weight: bold;
+  text-align: center;
+  padding-top: 5%;
 }
 
 .copyright {
