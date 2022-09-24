@@ -1,5 +1,5 @@
-@import "./header.css";
-@import "./singlepage.cs";
+@import './header.css';
+@import './singlepage.css';
 
 * {
   margin: 0;
@@ -105,7 +105,8 @@ input {
 
 td {
   color: black;
-  font-weight: bold;
+  text-align: center;
+  padding-top: 5%;
 }
 
 .copyright {

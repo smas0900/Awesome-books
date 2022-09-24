@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,27 @@
     <title>Owesome Books App</title>
     <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
-    <div class="Container-fluid">
-      <header>
+    <header>
         <nav class="nav-bar">
-        <section class="logo"><a>Owesome Books</a></section>
-       <ul class="list-Container">
-            <li class="nav-items" id="List" onclick="window.location.reload();">List</li>
-            <li class="nav-items" id="Add" >Add New</li>
-            <li class="nav-items" id="Link">Contact</li>
-        </ul>
+            <section class="logo"><a>Owesome Books</a></section>
+            <ul class="list-Container">
+                <li><a href="javascript:void(0)" class="nav-link" data-page="list">List</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" data-page="form">add new</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" data-page="contact">contact</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="datetime">
-        <p class="date"></p>
-    </div>
-    
-    <section class="main-container">
-        <section class="List-Items">
-        <h1 class="owesome-header">All Owesome Books</h1>
-        <section class="HoldCollection">
-            <table class="collection">
-              
-                </table>
+    <main id="app">
+    </main>
+    <footer>
+        <section class="copyright">
+         <h3>Copy Right</h3>
         </section>
-    </section>
-        <section class="add-books">
-            <h2 class="New-header">Add New Book</h2>
-            <div class="newbooks">
-                <input type="text" placeholder="Add Book Title" id="title" name="title" required><br><br>
-                <input type="text" placeholder=" Add Author" id="author" name="author" required><br><br>
-                <button type="submit" name="btn" id="btn">Add</button>
-                <small class="checker"></small><br>
-            </div>
-            </section> 
-            
-          </section>
-    </section>
-   
-</div>
-     <script type="module" src="./index.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+    </footer>
+    <script type="module" src="./src/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
 </body>
+
 </html>
