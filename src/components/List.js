@@ -42,6 +42,7 @@ export default class List {
         </tr>
         `;
       });
+      
     } else {
       library.innerHTML += `
         <tr>
