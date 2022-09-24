@@ -1,0 +1,171 @@
+@import "./header.css";
+@import "./singlepage.cs";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.main-container {
+  width: 550px;
+  margin: auto;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 400px;
+}
+
+.HoldCollection {
+  margin-top: 20px;
+}
+
+.mytable {
+  width: 100%;
+}
+
+.collection {
+  width: 550px;
+  border: 2px solid black;
+  height: auto;
+  padding: 10px;
+}
+
+.BookList {
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 5px;
+  height: 100px;
+}
+
+.line {
+  width: 120px;
+  background: black;
+  color: black;
+  height: 5px;
+  margin-top: -10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40%;
+}
+
+.newbooks {
+  margin-top: 15px;
+}
+
+.owesome-header {
+  text-align: center;
+  font-size: 50px;
+  margin-top: -10px;
+}
+
+.New-header {
+  text-align: center;
+  font-size: 30px;
+  margin-top: -5px;
+}
+
+input {
+  width: 300px;
+  height: 35px;
+  border: 2px solid black;
+}
+
+#btn {
+  float: right;
+  margin-top: -10px;
+  width: 50px;
+  height: 35px;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.Display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  row-gap: 10px;
+  width: 550px;
+  height: 40px;
+  padding: 10px;
+  background-color: rgba(24, 18, 18, 0.052);
+}
+
+.remove {
+  box-shadow: 2px 5px black;
+  border: 3px solid black;
+  width: 100px;
+  height: 30px;
+}
+
+td {
+  color: black;
+  font-weight: bold;
+}
+
+.copyright {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  margin: auto 5% 5%;
+}
+
+.copy {
+  border: 2px solid black;
+  height: 50px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: -50px;
+}
+
+.con-head {
+  font-size: 50px;
+}
+
+.contact-sub {
+  margin-top: 20px;
+}
+
+.con-ul {
+  margin-top: 20px;
+}
+
+.con-ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .collection {
+    width: 450px;
+    border: 2px solid black;
+    height: auto;
+    padding: 10px;
+    margin-left: 12px;
+  }
+
+  .owesome-header {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -10px;
+  }
+
+  .Display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 10px;
+    width: 450px;
+    height: 40px;
+    padding: 10px;
+    background-color: rgba(24, 18, 18, 0.052);
+  }
+}
