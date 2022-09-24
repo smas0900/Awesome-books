@@ -7,6 +7,12 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // get DOM of page container
 const container = document.getElementById('app');
+function defaultData() {
+  const listData = new List();
+  container.innerHTML = listData.content;
+  List.displayBooks();
+  listData.deleteBook();
+}
 
 // load default page
 defaultData();
@@ -40,10 +46,3 @@ navLinks.forEach((element) => {
     }
   });
 });
-
-function defaultData() {
-  const listData = new List();
-  container.innerHTML = listData.content;
-  List.displayBooks();
-  listData.deleteBook();
-}
