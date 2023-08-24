@@ -1,4 +1,4 @@
-import { DateTime } from './components/luxun.js';
+import { DateTime } from './components/luxon.js';
 import Form from './components/Form.js';
 import List from './components/List.js';
 import Contact from './components/Contact.js';
@@ -8,13 +8,13 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // get DOM of page container
 const container = document.getElementById('app');
-function defaultData() {
+
+const defaultData = () => {
   const listData = new List();
   container.innerHTML = listData.content;
   List.displayBooks();
   listData.deleteBook();
 }
-
 // load default page
 defaultData();
 
