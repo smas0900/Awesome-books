@@ -14,7 +14,7 @@ const defaultData = () => {
   container.innerHTML = listData.content;
   List.displayBooks();
   listData.deleteBook();
-}
+};
 // load default page
 defaultData();
 
