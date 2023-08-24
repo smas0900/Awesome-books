@@ -1,3 +1,4 @@
+import { DateTime } from './components/luxun.js';
 import Form from './components/Form.js';
 import List from './components/List.js';
 import Contact from './components/Contact.js';
@@ -44,12 +45,16 @@ navLinks.forEach((element) => {
     }
   });
 });
-// Add datetime
-const { DateTime } = luxon; // eslint-disable-line no-undef
-const dateTimeDiv = document.querySelector('.dateTime');
-function updateTime() {
-  const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
-  dateTimeDiv.textContent = dt.toString();
-}
-updateTime();
-setInterval(updateTime, 1000);
+// // Add datetime
+//creating a Luxon Datetime instance
+
+const updateTimeDisplay = () => {
+  const timeDisplay = document.getElementById('timeDisplay');
+  const currentDate = DateTime.now(); // eslint-disable-line no-undef
+  // Formatting the date as a string
+  const formattedDate = currentDate.toLocaleString(DateTime.DATETIME_FULL);
+  timeDisplay.textContent = formattedDate;
+};
+// updateTimeDisplay();
+updateTimeDisplay();
+setInterval(updateTimeDisplay, 1000);
