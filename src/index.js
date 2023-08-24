@@ -44,14 +44,3 @@ navLinks.forEach((element) => {
     }
   });
 });
-
-// Add datetime
-// eslint-disable-next-line no-use-before-define
-const { DateTime } = luxon; // eslint-disable-line no-undef
-const dateTimeDiv = document.querySelector('.dateTime');
-function updateTime() {
-  const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
-  dateTimeDiv.textContent = dt.toString();
-}
-updateTime();
-setInterval(updateTime, 1000);
