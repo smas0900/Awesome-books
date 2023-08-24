@@ -1,3 +1,4 @@
+import { DateTime } from './components/luxun.js';
 import Form from './components/Form.js';
 import List from './components/List.js';
 import Contact from './components/Contact.js';
@@ -44,3 +45,14 @@ navLinks.forEach((element) => {
     }
   });
 });
+
+const updateTimeDisplay = () => {
+  const timeDisplay = document.getElementById('timeDisplay');
+  const currentDate = DateTime.now(); // eslint-disable-line no-undef
+  // Formatting the date as a string
+  const formattedDate = currentDate.toLocaleString(DateTime.DATETIME_FULL);
+  timeDisplay.textContent = formattedDate;
+};
+// updateTimeDisplay();
+updateTimeDisplay();
+setInterval(updateTimeDisplay, 1000);
