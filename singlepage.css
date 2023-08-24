@@ -1,0 +1,24 @@
+.Contact {
+  display: none;
+}
+
+.List-Items {
+  display: block;
+  margin-top: 10px;
+}
+
+.add-books.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Contact.active {
+  display: block;
+}
+
+.List-Items.active {
+  display: block;
+  margin-top: 10px;
+}
