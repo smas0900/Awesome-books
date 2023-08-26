@@ -1,3 +1,4 @@
+import { DateTime } from './components/luxon.js';
 import Form from './components/Form.js';
 import List from './components/List.js';
 import Contact from './components/Contact.js';
@@ -7,13 +8,13 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // get DOM of page container
 const container = document.getElementById('app');
-function defaultData() {
+
+const defaultData = () => {
   const listData = new List();
   container.innerHTML = listData.content;
   List.displayBooks();
   listData.deleteBook();
-}
-
+};
 // load default page
 defaultData();
 
@@ -44,3 +45,14 @@ navLinks.forEach((element) => {
     }
   });
 });
+
+const updateTimeDisplay = () => {
+  const timeDisplay = document.getElementById('timeDisplay');
+  const currentDate = DateTime.now(); // eslint-disable-line no-undef
+  // Formatting the date as a string
+  const formattedDate = currentDate.toLocaleString(DateTime.DATETIME_FULL);
+  timeDisplay.textContent = formattedDate;
+};
+// updateTimeDisplay();
+updateTimeDisplay();
+setInterval(updateTimeDisplay, 1000);
